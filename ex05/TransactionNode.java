@@ -1,5 +1,3 @@
-package ex05;
-
 public class TransactionNode {
     Transaction transaction;
     TransactionNode next;

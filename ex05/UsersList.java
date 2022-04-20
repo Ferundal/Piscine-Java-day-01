@@ -1,6 +1,3 @@
-package ex05;
-
-
 public interface UsersList {
     public void addUser(User newUser);
     public User findByIdentifier(int identifier) throws UserNotFoundException;

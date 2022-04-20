@@ -1,7 +1,3 @@
-package ex03;
-
-import java.util.UUID;
-
 public class Transaction {
     enum transferType {
         INCOME("Income", "+"), OUTCOME("Outcome", "-");

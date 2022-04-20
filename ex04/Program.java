@@ -1,8 +1,3 @@
-package ex04;
-
-
-import java.util.Random;
-
 public class Program {
     public static void main(String[] args) {
         TransactionsService mainService = new TransactionsService();

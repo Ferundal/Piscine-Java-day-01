@@ -1,5 +1,3 @@
-package ex00;
-
 public class User {
     private Integer identifier;
     private String name;

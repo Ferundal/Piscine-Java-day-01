@@ -1,5 +1,3 @@
-package ex02;
-
 public class UsersArrayList implements UsersList {
     private User [] array = new User[10];
     private int userAmount = 0;

@@ -1,5 +1,3 @@
-package ex01;
-
 public class UserIdsGenerator {
     private static UserIdsGenerator instance;
     private int currentIdentifier = 0;

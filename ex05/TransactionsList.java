@@ -1,5 +1,3 @@
-package ex05;
-
 import java.util.UUID;
 
 public interface TransactionsList {

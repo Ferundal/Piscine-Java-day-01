@@ -1,7 +1,3 @@
-package ex05;
-
-import java.util.Scanner;
-
 public class Program {
     public static void main(String[] args) {
         Menu mainMenu = new Menu();
@@ -12,13 +8,5 @@ public class Program {
             System.exit(-1);
         }
         mainMenu.startMenu();
-    }
-
-    public static void printTransactionArray(Transaction[] transactionArray) {
-        if (transactionArray.length == 0)
-            System.out.println("Empty Array\n");
-        for (int counter = 0; counter < transactionArray.length; ++counter) {
-            transactionArray[counter].printInConsole();
-        }
     }
 }
