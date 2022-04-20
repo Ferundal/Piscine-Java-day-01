@@ -1,3 +1,5 @@
+import java.util.UUID;
+
 public class Transaction {
     enum transferType {
         INCOME("Income", "+"), OUTCOME("Outcome", "-");
@@ -26,12 +28,20 @@ public class Transaction {
     private transferType transferType;
     private Integer transferAmount;
 
-    {
+    private Transaction() {
         identifier = UUID.randomUUID();
     }
+    private Transaction(Transaction original) {
+        identifier = original.identifier;
+        this.recipient = original.recipient;
+        this.sender = original.sender;
+        this.transferType = original.transferType;
+        this.transferAmount = original.transferAmount;
+    }
 
-    private Transaction() {}
+
     public Transaction(int recipient, int sender, transferType transferType, int transferAmount) {
+        identifier = UUID.randomUUID();
         this.recipient = recipient;
         this.sender = sender;
         this.transferType = transferType;
@@ -76,11 +86,22 @@ public class Transaction {
             this.transferAmount = transferAmount;
         }
     }
+
+    public Transaction createMirrorCopy() {
+        Transaction result = new Transaction(this);
+        if (this.transferType == transferType.INCOME) {
+            result.transferType = transferType.OUTCOME;
+        } else {
+            result.transferType = transferType.INCOME;
+        }
+        return result;
+    }
+
     public void printInConsole() {
         System.out.println("ID->" + this.getIdentifier()
-                + "\nTYPE->" + this.transferType.toString()
-                + "\nRECIPIENT->" + this.getRecipient()
-                + "\nSENDR->" + this.getSender()
-                + "\nTRANSFER AMOUNT->" + this.transferType.getSign() + this.getTransferAmount() +'\n');
+                + " TYPE->" + this.transferType.toString()
+                + " RECIPIENT->" + this.getRecipient()
+                + " SENDER->" + this.getSender()
+                + " TRANSFER AMOUNT->" + this.transferType.getSign() + this.getTransferAmount());
     }
 }
